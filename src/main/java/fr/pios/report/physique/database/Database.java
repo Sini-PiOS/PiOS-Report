@@ -15,7 +15,6 @@ import java.util.logging.Level;
 public abstract class Database {
 
     Connection connection;
-    // The name of the table we created back in SQLite class.
     public String table = "report";
 
     public Database() {
@@ -32,7 +31,7 @@ public abstract class Database {
             ResultSet rs = ps.executeQuery();
             close(ps, rs);
         } catch (SQLException ex) {
-            Main.plugin.getLogger().log(Level.SEVERE, "Unable to retreive connection", ex);
+            Main.logger.log(Level.SEVERE, "Unable to retreive connection", ex);
         }
     }
     
@@ -60,7 +59,7 @@ public abstract class Database {
             rs = ps.executeQuery();
             nb = rs.getInt("COUNT(*)");
         } catch (SQLException ex) {
-            Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+            Main.logger.log(Level.SEVERE, ex.getMessage());
         } finally {
             try {
                 if (ps != null) {
@@ -70,7 +69,7 @@ public abstract class Database {
                     conn.close();
                 }
             } catch (SQLException ex) {
-                Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+                Main.logger.log(Level.SEVERE, ex.getMessage());
             }
         }
         return nb;
@@ -101,7 +100,7 @@ public abstract class Database {
             rs = ps.executeQuery();
             nb = rs.getInt("COUNT(*)");
         } catch (SQLException ex) {
-            Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+            Main.logger.log(Level.SEVERE, ex.getMessage());
         } finally {
             try {
                 if (ps != null) {
@@ -111,7 +110,7 @@ public abstract class Database {
                     conn.close();
                 }
             } catch (SQLException ex) {
-                Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+                Main.logger.log(Level.SEVERE, ex.getMessage());
             }
         }
         return nb;
@@ -142,7 +141,7 @@ public abstract class Database {
             rs = ps.executeQuery();
             nb = rs.getInt("COUNT(*)");
         } catch (SQLException ex) {
-            Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+            Main.logger.log(Level.SEVERE, ex.getMessage());
         } finally {
             try {
                 if (ps != null) {
@@ -152,7 +151,7 @@ public abstract class Database {
                     conn.close();
                 }
             } catch (SQLException ex) {
-                Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+                Main.logger.log(Level.SEVERE, ex.getMessage());
             }
         }
         return nb;
@@ -174,7 +173,7 @@ public abstract class Database {
             ps.setBoolean(6, report.isRemoved());
             ps.execute();
         } catch (SQLException ex) {
-            Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+            Main.logger.log(Level.SEVERE, ex.getMessage());
         } finally {
             try {
                 if (ps != null) {
@@ -184,7 +183,7 @@ public abstract class Database {
                     conn.close();
                 }
             } catch (SQLException ex) {
-                Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+                Main.logger.log(Level.SEVERE, ex.getMessage());
             }
         }
         return 0;
@@ -212,7 +211,7 @@ public abstract class Database {
             ps.setInt(7, report.getId());
             ps.execute();
         } catch (SQLException ex) {
-            Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+            Main.logger.log(Level.SEVERE, ex.getMessage());
         } finally {
             try {
                 if (ps != null) {
@@ -222,7 +221,7 @@ public abstract class Database {
                     conn.close();
                 }
             } catch (SQLException ex) {
-                Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+                Main.logger.log(Level.SEVERE, ex.getMessage());
             }
         }
         return 0;
@@ -249,7 +248,7 @@ public abstract class Database {
             ps.setInt(7, report.getId());
             ps.execute();
         } catch (SQLException ex) {
-            Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+            Main.logger.log(Level.SEVERE, ex.getMessage());
         } finally {
             try {
                 if (ps != null) {
@@ -259,7 +258,7 @@ public abstract class Database {
                     conn.close();
                 }
             } catch (SQLException ex) {
-                Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+                Main.logger.log(Level.SEVERE, ex.getMessage());
             }
         }
         return 0;
@@ -289,7 +288,7 @@ public abstract class Database {
                 }
             }
         } catch (SQLException ex) {
-            Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+            Main.logger.log(Level.SEVERE, ex.getMessage());
         } finally {
             try {
                 if (ps != null) {
@@ -299,7 +298,7 @@ public abstract class Database {
                     conn.close();
                 }
             } catch (SQLException ex) {
-                Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+                Main.logger.log(Level.SEVERE, ex.getMessage());
             }
         }
         return report;
@@ -366,7 +365,7 @@ public abstract class Database {
             }
             report = reports;
         } catch (SQLException ex) {
-            Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+            Main.logger.log(Level.SEVERE, ex.getMessage());
         } finally {
             try {
                 if (ps != null) {
@@ -376,7 +375,7 @@ public abstract class Database {
                     conn.close();
                 }
             } catch (SQLException ex) {
-                Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+                Main.logger.log(Level.SEVERE, ex.getMessage());
             }
         }
         return report;
@@ -419,7 +418,7 @@ public abstract class Database {
             }
             report = reports;
         } catch (SQLException ex) {
-            Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+            Main.logger.log(Level.SEVERE, ex.getMessage());
         } finally {
             try {
                 if (ps != null) {
@@ -429,7 +428,7 @@ public abstract class Database {
                     conn.close();
                 }
             } catch (SQLException ex) {
-                Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+                Main.logger.log(Level.SEVERE, ex.getMessage());
             }
         }
         return report;
@@ -471,7 +470,7 @@ public abstract class Database {
             }
             report = reports;
         } catch (SQLException ex) {
-            Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+            Main.logger.log(Level.SEVERE, ex.getMessage());
         } finally {
             try {
                 if (ps != null) {
@@ -481,7 +480,7 @@ public abstract class Database {
                     conn.close();
                 }
             } catch (SQLException ex) {
-                Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+                Main.logger.log(Level.SEVERE, ex.getMessage());
             }
         }
         return report;
@@ -497,7 +496,7 @@ public abstract class Database {
                 rs.close();
             }
         } catch (SQLException ex) {
-            Main.plugin.getLogger().log(Level.SEVERE, ex.getMessage());
+            Main.logger.log(Level.SEVERE, ex.getMessage());
         }
     }
 }

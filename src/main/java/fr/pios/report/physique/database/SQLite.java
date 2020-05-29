@@ -30,7 +30,6 @@ public class SQLite extends Database{
             "`removed` int(1) NOT NULL" +
             ");";
 
-    // SQL creation stuff, You can leave the blow stuff untouched.
     @Override
     public Connection getSQLConnection() {
         File dataFolder = new File(Main.plugin.getDataFolder(), dbname+".db");
@@ -38,7 +37,7 @@ public class SQLite extends Database{
             try {
                 dataFolder.createNewFile();
             } catch (IOException e) {
-                Main.plugin.getLogger().log(Level.SEVERE, "File write error: "+dbname+".db");
+                Main.logger.log(Level.SEVERE, "File write error: {0}.db", dbname);
             }
         }
         try {
@@ -49,9 +48,9 @@ public class SQLite extends Database{
             connection = DriverManager.getConnection("jdbc:sqlite:" + dataFolder);
             return connection;
         } catch (SQLException ex) {
-            Main.plugin.getLogger().log(Level.SEVERE,"SQLite exception on initialize", ex);
+            Main.logger.log(Level.SEVERE,"SQLite exception on initialize", ex);
         } catch (ClassNotFoundException ex) {
-            Main.plugin.getLogger().log(Level.SEVERE, "You need the SQLite JBDC library. Google it. Put it in /lib folder.");
+            Main.logger.log(Level.SEVERE, "JBDC library error.");
         }
         return null;
     }

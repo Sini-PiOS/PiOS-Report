@@ -12,7 +12,7 @@ import org.bukkit.scheduler.BukkitRunnable;
  */
 public class TaskReport extends BukkitRunnable {
     private final Player sender;
-    private String reported;
+    private final String reported;
     private final String reason;
 
     public TaskReport(Player sender, String reported, String reason) {
@@ -38,7 +38,7 @@ public class TaskReport extends BukkitRunnable {
             hook.addEmbed(eo);
             hook.execute();
         } catch (Exception ex) {
-            Main.plugin.getLogger().log(Level.SEVERE, "ERREUR: Echec de l''envoi du message par le Hook Discord! [{0}]", ex.getMessage());
+            Main.logger.log(Level.SEVERE, "ERREUR: Echec de l''envoi du message par le Hook Discord! [{0}]", ex.getMessage());
         }
     }
 }

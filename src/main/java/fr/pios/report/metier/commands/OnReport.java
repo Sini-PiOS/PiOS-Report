@@ -23,7 +23,7 @@ public class OnReport implements TabExecutor{
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(!(sender instanceof Player)) {
-            sender.getServer().getLogger().log(Level.WARNING, "La console ne peut pas envoyer de REPORT.");
+            Main.logger.log(Level.WARNING, "La console ne peut pas envoyer de REPORT.");
             return true;
         }
         if(args.length < 2) {
@@ -45,10 +45,8 @@ public class OnReport implements TabExecutor{
             sender.getServer().getOnlinePlayers().stream().filter((p) -> (p.hasPermission("pios.report.receive"))).forEachOrdered((p) -> {
                 JSONMessage msg = JSONMessage.create("§4§l[Report]§r §3<§e").then(player.getName()).suggestCommand("/msg " + player.getName()).tooltip("Envoie un message à §3" + player.getName())
                         .then("§4 reporte §e").then(reported).suggestCommand("/msg " + reported).tooltip("Envoie un message à §c" + reported + "§r (s'il existe et est connecté)").then("§3>§4 : §c" + reason)
-                        .newline().then("§cTP vers Rapporteur§r").runCommand("/tp " + player.getName()).tooltip("§4Attention: exécute immédiatement la commande /tp " + player.getName());
+                        .newline().then("§f[§cTP vers Rapporteur§f]§r").runCommand("/tp " + player.getName()).tooltip("§4Attention: exécute immédiatement la commande /tp " + player.getName());
                 msg.send(p);
-            /*p.sendMessage("§4§l[Report]§r §3<§e" + player.getName() + "§4 reporte §e" + reported + "§3>§4 : §c"
-                          + reason);*/
             });
         }
         if(Main.config.getBoolean("Minecraft.SendToConsole")) {

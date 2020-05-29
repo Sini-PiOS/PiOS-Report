@@ -162,7 +162,6 @@ public class OnAdminReport implements TabExecutor {
             } catch (NumberFormatException ex) {}
         }
         List<Report> reports = Main.db.GetReportByPseudo(args[1], (page*10), 10, removed, resolved);
-        //List<Report> reports = Main.db.getAllReports((page)*10, 10, removed, resolved);
         if(reports.isEmpty()) {
             sender.sendMessage("§4§l[Report]§r§c Aucun résultat trouvé.");
         } else {
@@ -177,11 +176,7 @@ public class OnAdminReport implements TabExecutor {
                         msg.then(" §2§lRS");
                     }
                 });
-                //int rs = (Main.db.getCountReport(removed, resolved)/10)+1;
                 int rs = (int)(Math.floor((Main.db.getCountReportByPseudo(args[1], removed, resolved)-1)/10))+1;
-                /*if((rs % 10) == 0) {
-                    rs--;
-                }*/
                     msg.newline();
                     if((page) > 0) {
                         msg.then("§f<<< ").tooltip("Page Précédente").runCommand("/pios-report player " + args[1] + " " + (page) + (removed ? " -rm" : "" ) + (resolved ? " -rs" : "" ));
@@ -196,7 +191,7 @@ public class OnAdminReport implements TabExecutor {
                     }
                 msg.send((Player)sender);
             } else {
-                //Main.plugin.getLogger().log(Level.WARNING, "Commande exécutable uniquement depuis un joueur présent sur le serveur.");
+                // TODO: IMPLEMENT FOR CONSOLE VIEW
             }
         }
         return true;
@@ -221,7 +216,6 @@ public class OnAdminReport implements TabExecutor {
             } catch (NumberFormatException ex) {}
         }
         List<Report> reports = Main.db.GetReportByReported(args[1], (page*10), 10, removed, resolved);
-        //List<Report> reports = Main.db.getAllReports((page)*10, 10, removed, resolved);
         if(reports.isEmpty()) {
             sender.sendMessage("§4§l[Report]§r§c Aucun résultat trouvé.");
         } else {
@@ -236,11 +230,7 @@ public class OnAdminReport implements TabExecutor {
                         msg.then(" §2§lRS");
                     }
                 });
-                //int rs = (Main.db.getCountReport(removed, resolved)/10)+1;
                 int rs = (int)(Math.floor((Main.db.getCountReportByReported(args[1], removed, resolved)-1)/10))+1;
-                /*if((rs % 10) == 0) {
-                    rs--;
-                }*/
                     msg.newline();
                     if((page) > 0) {
                         msg.then("§f<<< ").tooltip("Page Précédente").runCommand("/pios-report reported " + args[1] + " " + (page) + (removed ? " -rm" : "" ) + (resolved ? " -rs" : "" ));
@@ -255,7 +245,7 @@ public class OnAdminReport implements TabExecutor {
                     }
                 msg.send((Player)sender);
             } else {
-                //Main.plugin.getLogger().log(Level.WARNING, "Commande exécutable uniquement depuis un joueur présent sur le serveur.");
+                // TODO: IMPLEMENT FOR CONSOLE VIEW
             }
         }
         return true;
@@ -459,11 +449,7 @@ public class OnAdminReport implements TabExecutor {
                         msg.then(" §2§lRS");
                     }
                 });
-                //int rs = (Main.db.getCountReport(removed, resolved)/10)+1;
                 int rs = (int)(Math.floor((Main.db.getCountReport(removed, resolved)-1)/10))+1;
-                /*if((rs % 10) == 0) {
-                    rs--;
-                }*/
                     msg.newline();
                     if((page) > 0) {
                         msg.then("§f<<< ").tooltip("Page Précédente").runCommand("/pios-report list " + (page) + (removed ? " -rm" : "" ) + (resolved ? " -rs" : "" ));
@@ -478,7 +464,7 @@ public class OnAdminReport implements TabExecutor {
                     }
                 msg.send((Player)sender);
             } else {
-                //Main.plugin.getLogger().log(Level.WARNING, "Commande exécutable uniquement depuis un joueur présent sur le serveur.");
+                // TODO: IMPLEMENT FOR CONSOLE VIEW
             }
         }
         return true;

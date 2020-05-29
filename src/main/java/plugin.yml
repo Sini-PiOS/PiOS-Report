@@ -17,16 +17,6 @@ commands:
         usage: /pios-report
         permission: pios.report.read
         permission-manage: Autorisation manquante (<permission>)
-    #piosr:
-    #    description: Option admin du report.
-    #    usage: /piosr
-    #    permission: pios.report.read
-    #    permission-manage: Autorisation manquante (<permission>)
-    #pir:
-    #    description: Option admin du report.
-    #    usage: /pir
-    #    permission: pios.report.read
-    #    permission-manage: Autorisation manquante (<permission>)
 permissions:
     pios.report.*:
         description: Give all access to PiOS Report commands
@@ -34,7 +24,9 @@ permissions:
             pios.report: true
             pios.report.receive: true
             pios.report.read: true
-            pios.report.set.*: true
+            pios.report.set.resolved: true
+            pios.report.set.removed: true
+            pios.report.set.edit: true
     pios.report:
         description: Allows you to report player
         default: true
@@ -43,7 +35,9 @@ permissions:
         children:
             pios.report.receive: true
             pios.report.read: true
-            pios.report.set.*: true
+            pios.report.set.resolved: true
+            pios.report.set.removed: true
+            pios.report.set.edit: true
     pios.report.receive:
         description: Allows you to receive reports
         default: op
@@ -56,6 +50,7 @@ permissions:
         children:
             pios.report.set.removed: true
             pios.report.set.resolved: true
+            pios.report.set.edit: true
     pios.report.set.resolved:
         description: Allows you to set the resolved mod to a report
         default: op

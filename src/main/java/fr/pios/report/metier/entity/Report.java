@@ -7,7 +7,7 @@ import java.util.Date;
  * @author Molzonas
  */
 public class Report {
-    private int id; // ROWID dans la DB SQLite
+    private int id;
     private String sender;
     private String reported;
     private String reason;
