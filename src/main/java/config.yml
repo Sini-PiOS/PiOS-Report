@@ -1,0 +1,20 @@
+Discord:
+    # UseDiscord : Active ou désactive l'utilisation des Webhooks Discord
+    # Valeurs: 'true', 'false' | Défaut: 'true'
+    UseDiscord: true
+    # WebhookURL : URL du Webhook Discord
+    # Valeurs: URL | Défaut: Aucun
+    WebHookURL: "INSERT WEBHOOK URL HERE"
+    # TextToSpeech : Définit si le message du Webhook sera en TTS (Text-To-Speech)
+    # Valeurs: 'true', 'false' | Défaut: 'false'
+    TextToSpeech: false
+    # AvatarWebhooked : Définit l'avatar affiché dans le Webhook
+    # Valeurs: NONE, REPORTER | Défaut: REPORTER
+    AvatarWebhooked: REPORTER
+Minecraft:
+    # UseMinecraft : Active ou désactive l'envoi du rapport par Minecraft
+    # Valeurs: 'true', 'false' | Défaut: 'true'
+    UseMinecraft: true
+    # SendToConsole : Envoie ou non le rapport sur la console
+    # Valeurs: 'true', 'false' | Défaut: 'true'
+    SendToConsole: true

@@ -1,0 +1,68 @@
+name: PiOS-Report
+version: 1.0
+api-version: 1.15
+main: fr.pios.report.client.Main
+author: PiOS
+commands:
+    report:
+        description: Report un joueur.
+        usage: /report {joueur} {raison}
+        permission: pios.report
+        permission-manage: Autorisation manquante (<permission>)
+    pios-report:
+        description: Option admin du report.
+        aliases: 
+        - pir
+        - piosr
+        usage: /pios-report
+        permission: pios.report.read
+        permission-manage: Autorisation manquante (<permission>)
+    #piosr:
+    #    description: Option admin du report.
+    #    usage: /piosr
+    #    permission: pios.report.read
+    #    permission-manage: Autorisation manquante (<permission>)
+    #pir:
+    #    description: Option admin du report.
+    #    usage: /pir
+    #    permission: pios.report.read
+    #    permission-manage: Autorisation manquante (<permission>)
+permissions:
+    pios.report.*:
+        description: Give all access to PiOS Report commands
+        children:
+            pios.report: true
+            pios.report.receive: true
+            pios.report.read: true
+            pios.report.set.*: true
+    pios.report:
+        description: Allows you to report player
+        default: true
+    pios.report.admin:
+        description: Give all access to PiOS Report admin commands
+        children:
+            pios.report.receive: true
+            pios.report.read: true
+            pios.report.set.*: true
+    pios.report.receive:
+        description: Allows you to receive reports
+        default: op
+    pios.report.read:
+        description: Allows you to read old reports
+        default: op
+    pios.report.set.*:
+        description: Allows you to set all mods to reports
+        default: op
+        children:
+            pios.report.set.removed: true
+            pios.report.set.resolved: true
+    pios.report.set.resolved:
+        description: Allows you to set the resolved mod to a report
+        default: op
+    pios.report.set.removed:
+        description: Allows you to set the removed mod to a report
+        default: op
+    pios.report.set.edit:
+        description: Allows you to edit a report
+        default: op
+    
