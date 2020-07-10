@@ -41,10 +41,10 @@ Ceci est mon premier plugin public!*
 |pios.report.*|Englobe toutes les permissions du plugin.|
 
 ## Screenshots
-![/report Ltms055 A détruit mon champ dans le monde créatif](http://siniup.com/resources/pios/report/report.png)
-![Reçu du rapport aux modérateurs](http://siniup.com/resources/pios/report/result.png)
-![Résultat du rapport sur Discord](http://siniup.com/resources/pios/report/discord.png)
-![Commande /pios-report help](http://siniup.com/resources/pios/report/help.png)
-![Commande /pios-report list](http://siniup.com/resources/pios/report/list.png)![Commande /pios-report player ch_pi](http://siniup.com/resources/pios/report/player.png)
-![Commande /pios-report list -rs](http://siniup.com/resources/pios/report/list-rs.png)![Commande /pios-report list -rm](http://siniup.com/resources/pios/report/list-rm.png)![Commande /pios-report list -rm -rs](http://siniup.com/resources/pios/report/list-rm-rs.png)
-![Commande /pios-report info 28](http://siniup.com/resources/pios/report/info.png)
+![/report Ltms055 A détruit mon champ dans le monde créatif](https://ressources.pios.me/img/pios/report/report.png)
+![Reçu du rapport aux modérateurs](https://ressources.pios.me/img/pios/report/result.png)
+![Résultat du rapport sur Discord](https://ressources.pios.me/img/pios/report/discord.png)
+![Commande /pios-report help](https://ressources.pios.me/img/pios/report/help.png)
+![Commande /pios-report list](https://ressources.pios.me/img/pios/report/list.png)![Commande /pios-report player ch_pi](https://ressources.pios.me/img/pios/report/player.png)
+![Commande /pios-report list -rs](https://ressources.pios.me/img/pios/report/list-rs.png)![Commande /pios-report list -rm](https://ressources.pios.me/img/pios/report/list-rm.png)![Commande /pios-report list -rm -rs](https://ressources.pios.me/img/pios/report/list-rm-rs.png)
+![Commande /pios-report info 28](https://ressources.pios.me/img/pios/report/info.png)
